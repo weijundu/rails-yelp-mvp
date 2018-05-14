@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @restaurant do |f| %>
+      <% if@restaurant.error.any? %>
+      <ul>
+        <%@restaurant.error.full_message.each do |message|%>
+        <li><%= message %></li>
+      </ul>
+      <%= f.input :name, class: "form-control"%>
+      <%= f.input :address,  class: "form-control"%>
+      <%= f.input :phone_number,  class: "form-control"%>
+      <%= f.input :category,  class: "form-control"%>
+      <%= f.submit class: "btn btn-primary" %>
+      <% end %><br>
+      <%= link_to "Back to the list", restaurants_path %>
+    </div>
+  </div>
+</div>
+
+
+
+
